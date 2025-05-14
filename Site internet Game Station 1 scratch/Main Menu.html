@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <link rel="icon" type="image/x-icon" href="favicon.ico  ">
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Game Station 1 Web Site</title>
+    <style>
+        /* Style général de la page */
+        body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-image: url("image main menu/fond\ main\ menu.png"); /* Remplace par le bon chemin */
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+        header {
+            background-color: #333;
+            color: #fff;
+            padding: 15px;
+            text-align: center;
+        }
+
+        /* Introduction */
+        .introduction {
+            background-image: url("image main menu/fond\ introduction.png");
+            padding: 20px;
+            margin: 15px;
+            background-repeat: no-repeat;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(255, 0, 191, 0.1);
+            background-position: center;
+            background-size: cover;
+        }
+
+        .introduction h2 {
+            color: #304458;
+        }
+
+        .introduction p {
+            font-size: 16px;
+            color: #555;
+            line-height: 1.6;
+        }
+
+        /* Nouveau bloc ajouté */
+        .nouveau-bloc {
+            background-color: #251952;  /* Couleur violet qui s'harmonise avec le rouge existant */
+            color: white;
+            padding: 20px;
+            margin: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgb(71, 12, 95);
+            text-align: center;
+        }
+
+        .nouveau-bloc h2 {
+            margin-top: 0;
+            font-size: 24px;
+        }
+
+        .nouveau-bloc p {
+            font-size: 16px;
+            margin-bottom: 15px;
+        }
+
+        .nouveau-bloc a {
+            background-color: #273c4b;  /* Un bleu pour le site */
+            color: white;
+            padding: 10px 20px;
+            text-decoration: none;
+            border-radius: 5px;
+            font-size: 18px;
+        }
+
+        .nouveau-bloc a:hover {
+            background-color: #275149;  /* Un changement de couleur au survol */
+        }
+
+        /* Trombinoscope */
+        .trombinoscope {
+            background-color: #a52609;
+            color: white;
+            padding: 20px;
+            margin: 20px;
+            text-align: center;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .trombinoscope a {
+            color: white;
+            text-decoration: none;
+            font-size: 18px;
+            background-color: #273e4d;
+            padding: 10px 20px;
+            border-radius: 5px;
+        }
+
+        .trombinoscope a:hover {
+            background-color: #27544b;
+        }
+
+        /* Style des sections des semaines */
+        .semaine {
+            color: white;
+            padding: 20px;
+            margin: 15px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .semaine h2 {
+            margin-top: 0;
+        }
+
+        .jour-links {
+            display: flex;
+            flex-wrap: wrap;
+        }
+
+        .jour-links a {
+            background-color: #344d5e;
+            color: white;
+            padding: 10px 20px;
+            margin: 5px;
+            text-decoration: none;
+            border-radius: 5px;
+            font-size: 16px;
+        }
+
+        .jour-links a:hover {
+            background-color: #19473e;
+        }
+        
+        .easter-egg {
+            width: 100px;
+            height: 100px;
+            cursor: pointer;
+            transition: transform 0.3s ease;
+        }
+        .easter-egg:hover {
+            transform: scale(1.2); /* Agrandissement au survol */
+        }
+    </style>
+    <script>
+        // Konami Code en tableau (↑ ↑ ↓ ↓ ← → ← → B A)
+        let konamiCode = [38, 38, 40, 40, 37, 39, 37, 39, 66, 65];
+        let codeIndex = 0;
+
+        // Fonction pour détecter les frappes de touche et rediriger en cas de succès
+        function handleKeyPress(event) {
+            if (event.keyCode === konamiCode[codeIndex]) {
+                codeIndex++;
+                if (codeIndex === konamiCode.length) {
+                    window.location.href = 'konamicode.html';  
+                }
+            } else {
+                codeIndex = 0;
+            }
+        }
+
+        // Écouteur d'événements pour les touches
+        document.addEventListener('keydown', handleKeyPress);
+    </script>
+</head>
+<body>
+
+<header>
+    <h1>Mises à jour</h1>
+</header>
+
+<!-- Introduction -->
+<section class="introduction">
+    <h3>Game Station 1 [1.0]</h3>
+    <p style="color: rgb(0, 0, 0);">
+       <strong><br>Début du projet de le Game Station 1 sur le logiciel Scratch. Recherche des images pour representer les éléments de la console.
+        <h3>Game Station 1 [1.1]</h3>
+        <p style="color: rgb(0, 0, 0);">
+        <br>
+         Nouvelles Listes ajoutées : DEFINITION PROMPTS et EXECUTION PROMPTS. Plus l'ajout d'un Document expliquant le fonctionnement en détails de la console.         </p>
+         <h3>Game Station 1 [1.2]</h3>
+         <p style="color: rgb(0, 0, 0);">
+         <br>
+          Ajout d'un écran de lancement de la console et d'une interface. Ajout de la deuxième commande nommé : Internet connexion. Elle permettra de "recevoir les mises à jour" à effectuer (c'est à dire d'annoncer les nouvelles [1. ...]). <br>Cette mise à jour est "broken" dans le sens où l'écran de lancement de la console s'active en même temps que l'animation.<br>
+        Ajout d'un bouton pour installer la dernière mise à jour.        </p>
+    
+</section>
+
+<!-- Nouveau bloc avec lien ajouté ici -->
+<section class="nouveau-bloc">
+    <div class="bloc-content">
+        <h2>Page de la Documentation</h2>
+        
+    <a href="Documentation/DOCUMENT_POUR_LA_GAME_STATION_1_SCRATCH_PROJECT.odt.htm" title="Voir la page sur la Documentation">Acceder à la page sur la Documentation</a>
+    </div>
+</section>
+
+<!-- Trombinoscope -->
+<section class="trombinoscope">
+    <div class="bloc-content">
+        <h2>Page de la dernière mise  à jour</h2>
+    <p>Téléchargement la dernière mise à jour</p>
+    <a href="Mises à jour/GAME STATION 1 [1.2].sb3" download>Télécharger</a>
+    <div>
+</section>
+
+<div class="content">
+    <!-- Semaine 1 -->
+    <div class="semaine" id="semaine1">
+        <h2>Semaine 1</h2>
+        <div class="jour-links">
+            <a href="jour/Jour 1 _ (rapport stage).html" title="Rapport du Jour 1">Jour 1</a>
+            <a href="jour/JOUR 2 .htm" title="Rapport du Jour 2">Jour 2</a>
+            <a href="jour/JOUR 3.htm" title="Rapport du Jour 3">Jour 3</a>
+            <a href="jour/JOUR 4.htm" title="Rapport du Jour 4">Jour 4</a>
+            <a href="jour/JOUR 5.htm" title="Rapport du Jour 5">Jour 5</a>
+        </div>
+    </div>
+
+    <!-- Semaine 2 -->
+    <div class="semaine" id="semaine2">
+        <h2>Semaine 2</h2>
+        <div class="jour-links">
+            <a href="jour/JOUR 6.htm" title="Rapport du Jour 6">Jour 6</a>
+            <a href="jour/JOUR 7.htm" title="Rapport du Jour 7">Jour 7</a>
+            <a href="jour/JOUR 8.htm" title="Rapport du Jour 8">Jour 8</a>
+            <a href="jour/JOUR 9.htm" title="Rapport du Jour 9">Jour 9</a>
+            <a href="jour/JOUR 10.htm" title="Rapport du Jour 10">Jour 10</a>
+        </div>
+    </div>
+
+    <!-- Semaine 3 -->
+    <div class="semaine" id="semaine3">
+        <h2>Semaine 3</h2>
+        <div class="jour-links">
+            <a href="jour/JOUR 11.htm" title="Rapport du Jour 11">Jour 11</a>
+            <a href="jour/JOUR 12.htm" title="Rapport du Jour 12">Jour 12</a>
+            <a href="jour/JOUR 13.htm" title="Rapport du Jour 13">Jour 13</a>
+            <a href="jour/JOUR 14.htm" title="Rapport du Jour 14">Jour 14</a>
+            <a href="jour/JOUR 15.htm" title="Rapport du Jour 15">Jour 15</a>
+        </div>
+    </div>
+
+    <!-- Semaine 4 -->
+    <div class="semaine" id="semaine4">
+        <h2>Semaine 4</h2>
+        <div class="jour-links">
+            <a href="jour/Jour 16.htm" title="Rapport du Jour 16">Jour 16</a>
+            <a href="jour/JOUR 17.htm" title="Rapport du Jour 17">Jour 17</a>
+            <a href="jour/JOUR 18.htm" title="Rapport du Jour 18">Jour 18</a>
+            <a href="jour/JOUR 19.htm" title="Rapport du Jour 19">Jour 19</a>
+            <a href="jour/JOUR 20.htm" title="Rapport du Jour 20">Jour 20</a>
+        </div>
+    </div>
+
+    <!-- Semaine 5 -->
+    <div class="semaine" id="semaine5">
+        <h2>Semaine 5</h2>
+        <div class="jour-links">
+            <a href="jour/JOUR 21.htm" title="Rapport du Jour 21">Jour 21</a>
+            <a href="jour/JOUR 22.htm" title="Rapport du Jour 22">Jour 22</a>
+            <a href="jour/JOUR 23.htm" title="Rapport du Jour 23">Jour 23</a>
+            <a href="jour/JOUR 24.htm" title="Rapport du Jour 24">Jour 24</a>
+            <a href="jour/JOUR 25.htm" title="Rapport du Jour 25">Jour 25</a>
+        </div>
+    </div>
+
+    <!-- Semaine 6 -->
+    <div class="semaine" id="semaine6">
+        <h2>Semaine 6</h2>
+        <div class="jour-links">
+            <a href="jour/JOUR 26.htm" title="Rapport du Jour 26">Jour 26</a>
+            <a href="jour/JOUR 27.htm" title="Rapport du Jour 27">Jour 27</a>
+            <a href="jour/JOUR 28.htm" title="Rapport du Jour 28">Jour 28</a>
+            <a href="jour/JOUR 29.htm" title="Rapport du Jour 29">Jour 29</a>
+            <a href="jour/JOUR 30.htm" title="Rapport du Jour 30">Jour 30</a>
+        </div>
+    </div>
+</div>
+
+<!-- Image de l'Easter Egg -->
+<img src="pngeaster-egg/easter-egg.png" alt="Easter Egg" class="easter-egg" onclick="window.location.href='easter-egg.html';">
+
+</body>
+</html>
